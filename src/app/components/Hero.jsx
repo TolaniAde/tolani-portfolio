@@ -1,5 +1,11 @@
 import "../styles/hero.css";
 import Image from "next/image";
+import {
+  FaLinkedinIn,
+  FaGithub,
+  FaXTwitter,
+  FaFacebookF
+} from "react-icons/fa6";
 
 export default function Hero() {
   return (
@@ -48,31 +54,39 @@ export default function Hero() {
         <div className="social-icons">
 
           <a
-            href="#"
+            href="https://www.linkedin.com/"
+            target="_blank"
+            rel="noopener noreferrer"
             aria-label="LinkedIn"
           >
-            in
+            <FaLinkedinIn />
           </a>
 
           <a
-            href="#"
+            href="https://github.com/"
+            target="_blank"
+            rel="noopener noreferrer"
             aria-label="GitHub"
           >
-            GH
+          <FaGithub />
           </a>
 
           <a
-            href="#"
-            aria-label="Twitter"
-          >
-            X
+            href="https://x.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="X"
+            >
+            <FaXTwitter />
           </a>
 
           <a
-            href="#"
+            href="https://www.facebook.com/"
+            target="_blank"
+            rel="noopener noreferrer"
             aria-label="Facebook"
-          >
-            f
+            >
+            <FaFacebookF />
           </a>
 
         </div>
@@ -86,7 +100,7 @@ export default function Hero() {
         <div className="image-box">
 
           <Image
-            src="/images/tolani.jpg"
+            src="/images/tolaniade.png"
             alt="Tolani Adepitan"
             width={400}
             height={500}

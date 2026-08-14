@@ -45,7 +45,7 @@ export default function Contact() {
 
             {/* Phone */}
             <a
-              href="tel:+234XXXXXXXXXX"
+              href="tel:+2347045044286"
               className="contact-item"
             >
               <div className="contact-icon">
@@ -54,13 +54,13 @@ export default function Contact() {
 
               <div>
                 <span>Phone</span>
-                <strong>+234 XXX XXX XXXX</strong>
+                <strong>+234 704 504 4286</strong>
               </div>
             </a>
 
             {/* Email */}
             <a
-              href="mailto:your@email.com"
+              href="mailto:tprince2018@gmail.com"
               className="contact-item"
             >
               <div className="contact-icon">
@@ -69,7 +69,7 @@ export default function Contact() {
 
               <div>
                 <span>Email</span>
-                <strong>your@email.com</strong>
+                <strong>tprince2018@gmail.com</strong>
               </div>
             </a>
 

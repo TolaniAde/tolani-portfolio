@@ -107,7 +107,7 @@ export default function Navbar() {
       </nav>
 
       <a href="/resume.pdf" className="hire-btn" download>
-        Download CV
+        Let's Talk
       </a>
 
       <button
