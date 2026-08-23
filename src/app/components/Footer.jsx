@@ -82,7 +82,7 @@ export default function Footer() {
             <div className="footer-social-icons">
 
               <a
-                href="#"
+                href="https://www.linkedin.com/in/tolani-adepitan"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
@@ -91,7 +91,7 @@ export default function Footer() {
               </a>
 
               <a
-                href="#"
+                href="https://github.com/TolaniAde"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="GitHub"
@@ -109,7 +109,7 @@ export default function Footer() {
               </a>
 
               <a
-                href="#"
+                href="https://x.com/iamtolani_a?s=11"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="X"

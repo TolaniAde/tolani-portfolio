@@ -106,7 +106,11 @@ export default function Navbar() {
         </ul>
       </nav>
 
-      <a href="/resume.pdf" className="hire-btn" download>
+      <a 
+        href="https://wa.me/2347045044286?text=Hello%20Tolani%2C%20I%20found%20your%20portfolio%20and%20I%27d%20like%20to%20discuss%20a%20project%2Fopportunity%20with%20you."
+        target="_blank"
+        rel="noopener noreferrer" 
+        className="hire-btn" download>
         Let's Talk
       </a>
 

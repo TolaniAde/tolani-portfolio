@@ -54,7 +54,7 @@ export default function Hero() {
         <div className="social-icons">
 
           <a
-            href="https://www.linkedin.com/"
+            href="https://www.linkedin.com/in/tolani-adepitan"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
@@ -63,7 +63,7 @@ export default function Hero() {
           </a>
 
           <a
-            href="https://github.com/"
+            href="https://github.com/TolaniAde"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub"
@@ -72,7 +72,7 @@ export default function Hero() {
           </a>
 
           <a
-            href="https://x.com/"
+            href="https://x.com/iamtolani_a?s=11"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="X"
