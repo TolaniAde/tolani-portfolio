@@ -6,10 +6,13 @@
     min-height: 100vh;
 
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+
     padding: 120px 8%;
-    gap: 70px;
+
+    gap: 80px;
+
     overflow: hidden;
 }
 
@@ -20,8 +23,13 @@
 
 .hero-text {
     flex: 1;
+
     max-width: 700px;
+
     animation: heroTextReveal 1s ease-out forwards;
+
+    position: relative;
+    z-index: 2;
 }
 
 
@@ -31,13 +39,21 @@
 
 .hero-tag {
     display: inline-block;
+
     background: #1e293b;
+
     color: #38bdf8;
+
     padding: 10px 20px;
+
     border-radius: 50px;
-    margin-bottom: 20px;
+
+    margin-bottom: 25px;
+
     font-weight: 600;
+
     opacity: 0;
+
     animation: fadeUp 0.8s ease-out 0.2s forwards;
 }
 
@@ -48,16 +64,22 @@
 
 .hero-text h1 {
     font-size: 4rem;
-    line-height: 1.2;
+
+    line-height: 1.15;
+
     margin-bottom: 15px;
+
     opacity: 0;
+
     animation: fadeUp 0.9s ease-out 0.4s forwards;
 }
 
 
 .hero-text h1 span {
     color: #38bdf8;
+
     display: inline-block;
+
     animation: nameGlow 3s ease-in-out infinite;
 }
 
@@ -137,7 +159,9 @@
 }
 
 
-/* PRIMARY BUTTON */
+/* =========================================
+   PRIMARY BUTTON
+========================================= */
 
 .primary-btn {
     background: #38bdf8;
@@ -159,7 +183,9 @@
 }
 
 
-/* SECONDARY BUTTON */
+/* =========================================
+   SECONDARY BUTTON
+========================================= */
 
 .secondary-btn {
     background: transparent;
@@ -237,17 +263,21 @@
 
 
 /* =========================================
-   HERO IMAGE
+   HERO IMAGE — RIGHT SIDE
 ========================================= */
 
 .hero-image {
-    flex: 1;
+    flex: 0 0 45%;
 
     display: flex;
 
     justify-content: center;
 
     align-items: center;
+
+    position: relative;
+
+    min-height: 520px;
 
     opacity: 0;
 
@@ -256,22 +286,146 @@
 
 
 /* =========================================
-   IMAGE BOX
+   IMAGE GLOW
 ========================================= */
 
+.hero-image-glow {
+    position: absolute;
+
+    width: 400px;
+
+    height: 400px;
+
+    border-radius: 50%;
+
+    background: rgba(56, 189, 248, 0.14);
+
+    filter: blur(70px);
+
+    z-index: 0;
+
+    animation: glowPulse 4s ease-in-out infinite;
+}
 
 
+/* =========================================
+   CIRCULAR IMAGE BOX
+========================================= */
+
+.image-box {
+    width: 430px;
+
+    height: 430px;
+
+    border-radius: 50%;
+
+    position: relative;
+
+    z-index: 1;
+
+    overflow: hidden;
+
+    background: #111c33;
+
+    border: 4px solid #38bdf8;
+
+    box-shadow:
+        0 0 20px rgba(56, 189, 248, 0.35),
+        0 0 50px rgba(56, 189, 248, 0.15);
+
+    animation: floatImage 5s ease-in-out infinite;
+}
 
 
 /* =========================================
    IMAGE
 ========================================= */
 
+.hero-person {
+    width: 100%;
 
+    height: 100%;
+
+    object-fit: cover;
+
+    /*
+       Zoom the original image so the straight
+       lower edge is hidden outside the circle.
+    */
+    transform: scale(1.35);
+
+    /*
+       Move image slightly upward so the face
+       remains nicely positioned inside the circle.
+    */
+    object-position: center 30%;
+
+    transition: transform 0.5s ease;
+}
+
+
+/* Slight zoom when hovering */
+
+.image-box:hover .hero-person {
+    transform: scale(1.42);
+}
 
 
 /* =========================================
-   TEXT REVEAL ANIMATION
+   IMAGE BORDER EFFECT
+========================================= */
+
+.image-box::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 8px;
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    border-radius: 50%;
+
+    z-index: 2;
+
+    pointer-events: none;
+        animation: rotateRing 15s linear infinite;
+}
+
+@keyframes rotateRing {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* =========================================
+   IMAGE GLOW PULSE
+========================================= */
+
+@keyframes glowPulse {
+
+    0%,
+    100% {
+        transform: scale(0.95);
+
+        opacity: 0.6;
+    }
+
+    50% {
+        transform: scale(1.08);
+
+        opacity: 0.9;
+    }
+}
+
+
+/* =========================================
+   TEXT REVEAL
 ========================================= */
 
 @keyframes heroTextReveal {
@@ -336,16 +490,13 @@
 
 @keyframes floatImage {
 
-    0% {
+    0%,
+    100% {
         transform: translateY(0);
     }
 
     50% {
-        transform: translateY(-15px);
-    }
-
-    100% {
-        transform: translateY(0);
+        transform: translateY(-12px);
     }
 }
 
@@ -375,24 +526,43 @@
    TABLET
 ========================================= */
 
-@media (max-width: 1000px) {
+@media (max-width: 1100px) {
 
     .hero {
-        padding: 100px 6%;
+        padding: 110px 6%;
 
         gap: 40px;
     }
 
+
     .hero-text h1 {
-        font-size: 3rem;
+        font-size: 3.2rem;
     }
+
 
     .hero-title {
-        font-size: 1.7rem;
+        font-size: 1.8rem;
     }
 
+
+    .hero-image {
+        flex: 0 0 42%;
+
+        min-height: 430px;
+    }
+
+
     .image-box {
+        width: 360px;
+
+        height: 360px;
+    }
+
+
+    .hero-image-glow {
         width: 340px;
+
+        height: 340px;
     }
 }
 
@@ -404,66 +574,136 @@
 @media (max-width: 768px) {
 
     .hero {
+
         min-height: auto;
+
+        display: flex;
 
         flex-direction: column;
 
         text-align: center;
 
-        padding: 120px 6% 80px;
+        padding: 110px 6% 80px;
 
-        gap: 60px;
+        gap: 35px;
     }
 
 
+    /* -----------------------------------------
+       IMAGE COMES FIRST ON MOBILE
+    ----------------------------------------- */
+
+    .hero-image {
+
+        order: -1;
+
+        width: 100%;
+
+        min-height: auto;
+
+        flex: none;
+
+        margin-bottom: 5px;
+    }
+
+
+    .hero-image-glow {
+
+        width: 270px;
+
+        height: 270px;
+
+        filter: blur(55px);
+    }
+
+
+    .image-box {
+
+        width: 260px;
+
+        height: 260px;
+
+        border-width: 3px;
+    }
+
+
+    .hero-person {
+
+        transform: scale(1.35);
+
+        object-position: center 30%;
+    }
+
+
+    .image-box:hover .hero-person {
+
+        transform: scale(1.35);
+    }
+
+
+    /* -----------------------------------------
+       TEXT
+    ----------------------------------------- */
+
     .hero-text {
+
         max-width: 100%;
+
+        width: 100%;
     }
 
 
     .hero-tag {
-        margin-bottom: 18px;
+
+        margin-bottom: 20px;
     }
 
 
     .hero-text h1 {
+
         font-size: 2.5rem;
+
+        line-height: 1.2;
     }
 
 
     .hero-title {
+
         font-size: 1.5rem;
     }
 
 
     .hero-text p {
+
         font-size: 16px;
 
         line-height: 1.7;
+
+        margin-left: auto;
+
+        margin-right: auto;
     }
 
 
+    /* -----------------------------------------
+       BUTTONS
+    ----------------------------------------- */
+
     .hero-buttons {
+
         justify-content: center;
 
         flex-wrap: wrap;
     }
 
 
+    /* -----------------------------------------
+       SOCIAL ICONS
+    ----------------------------------------- */
+
     .social-icons {
+
         justify-content: center;
-    }
-
-
-    .hero-image {
-        width: 100%;
-    }
-
-
-    .image-box {
-        width: 320px;
-
-        max-width: 90vw;
     }
 }
 
@@ -475,31 +715,60 @@
 @media (max-width: 480px) {
 
     .hero {
-        padding-left: 5%;
 
-        padding-right: 5%;
+        padding: 100px 5% 70px;
+
+        gap: 30px;
+    }
+
+
+    .image-box {
+
+        width: 220px;
+
+        height: 220px;
+    }
+
+
+    .hero-image-glow {
+
+        width: 230px;
+
+        height: 230px;
     }
 
 
     .hero-text h1 {
+
         font-size: 2.1rem;
     }
 
 
     .hero-title {
+
         font-size: 1.3rem;
     }
 
 
+    .hero-text p {
+
+        font-size: 15px;
+    }
+
+
     .hero-buttons {
+
         flex-direction: column;
 
         align-items: center;
+
+        gap: 12px;
     }
 
 
     .primary-btn,
     .secondary-btn {
+
         width: 100%;
 
         max-width: 280px;
@@ -509,18 +778,51 @@
 
 
     .social-icons {
+
         gap: 12px;
     }
 
 
-    .image-box {
-        width: 280px;
+    .social-icons a {
+
+        width: 45px;
+
+        height: 45px;
     }
 }
 
 
 /* =========================================
-   REDUCE ANIMATION FOR USERS WHO PREFER IT
+   VERY SMALL PHONES
+========================================= */
+
+@media (max-width: 360px) {
+
+    .image-box {
+
+        width: 195px;
+
+        height: 195px;
+    }
+
+
+    .hero-image-glow {
+
+        width: 210px;
+
+        height: 210px;
+    }
+
+
+    .hero-text h1 {
+
+        font-size: 1.9rem;
+    }
+}
+
+
+/* =========================================
+   REDUCE ANIMATION
 ========================================= */
 
 @media (prefers-reduced-motion: reduce) {
@@ -533,6 +835,7 @@
     .hero-buttons,
     .social-icons,
     .hero-image {
+
         animation: none;
 
         opacity: 1;
@@ -541,12 +844,15 @@
     }
 
 
-    .image-box {
+    .image-box,
+    .hero-image-glow {
+
         animation: none;
     }
 
 
     .hero-text h1 span {
+
         animation: none;
     }
 }

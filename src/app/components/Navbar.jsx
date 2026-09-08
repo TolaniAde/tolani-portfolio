@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
+import { FaWhatsapp } from "react-icons/fa";  // WhatsApp icon
 import "../styles/navbar.css";
 
 export default function Navbar() {
@@ -111,7 +112,7 @@ export default function Navbar() {
         target="_blank"
         rel="noopener noreferrer" 
         className="hire-btn" download>
-        Let's Talk
+        <FaWhatsapp /> Let's Talk
       </a>
 
       <button

@@ -1,5 +1,6 @@
 import "../styles/hero.css";
 import Image from "next/image";
+
 import {
   FaLinkedinIn,
   FaGithub,
@@ -11,7 +12,9 @@ export default function Hero() {
   return (
     <section className="hero">
 
-      {/* LEFT SIDE */}
+      {/* =========================================
+          LEFT SIDE — HERO TEXT
+      ========================================= */}
       <div className="hero-text">
 
         <span className="hero-tag">
@@ -23,7 +26,7 @@ export default function Hero() {
         </h1>
 
         <h2 className="hero-title">
-          Frontend Developer
+          Web Developer | Technical Writing
         </h2>
 
         <p>
@@ -32,6 +35,7 @@ export default function Hero() {
           people learn and businesses grow online.
         </p>
 
+        {/* BUTTONS */}
         <div className="hero-buttons">
 
           <a
@@ -50,7 +54,10 @@ export default function Hero() {
 
         </div>
 
-        {/* SOCIAL MEDIA ICONS */}
+
+        {/* =========================================
+            SOCIAL MEDIA ICONS
+        ========================================= */}
         <div className="social-icons">
 
           <a
@@ -68,7 +75,7 @@ export default function Hero() {
             rel="noopener noreferrer"
             aria-label="GitHub"
           >
-          <FaGithub />
+            <FaGithub />
           </a>
 
           <a
@@ -76,7 +83,7 @@ export default function Hero() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="X"
-            >
+          >
             <FaXTwitter />
           </a>
 
@@ -85,7 +92,7 @@ export default function Hero() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Facebook"
-            >
+          >
             <FaFacebookF />
           </a>
 
@@ -94,17 +101,24 @@ export default function Hero() {
       </div>
 
 
-      {/* RIGHT SIDE */}
+      {/* =========================================
+          RIGHT SIDE — CIRCULAR PROFILE IMAGE
+      ========================================= */}
       <div className="hero-image">
 
+        {/* Glow behind the circle */}
+        <div className="hero-image-glow"></div>
+
+        {/* Circular image */}
         <div className="image-box">
 
           <Image
-            src="/images/tolaniade.png"
+            src="/images/AdepitanTolani.png"
             alt="Tolani Adepitan"
-            width={400}
-            height={500}
+            width={600}
+            height={600}
             priority
+            className="hero-person"
           />
 
         </div>
