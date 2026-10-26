@@ -5,7 +5,7 @@ import {
   FaLinkedinIn,
   FaGithub,
   FaXTwitter,
-  FaFacebookF
+  FaFacebookF,
 } from "react-icons/fa6";
 
 export default function Hero() {
@@ -13,29 +13,51 @@ export default function Hero() {
     <section className="hero">
 
       {/* =========================================
+          HERO BACKGROUND DECORATIONS
+      ========================================= */}
+
+      <div className="hero-bg-circle hero-bg-circle-1"></div>
+      <div className="hero-bg-circle hero-bg-circle-2"></div>
+      <div className="hero-bg-dot hero-bg-dot-1"></div>
+      <div className="hero-bg-dot hero-bg-dot-2"></div>
+
+
+      {/* =========================================
           LEFT SIDE — HERO TEXT
       ========================================= */}
+
       <div className="hero-text">
 
+        {/* Welcome badge */}
         <span className="hero-tag">
           👋 Welcome to my Portfolio
         </span>
 
+
+        {/* Main heading */}
         <h1>
-          Hi, I'm <span>Tolani Adepitan</span>
+          Hi, I'm{" "}
+          <span className="hero-name">
+            Tolani Adepitan
+          </span>
         </h1>
 
+
+        {/* Job title */}
         <h2 className="hero-title">
-          Web Developer | Technical Writing
+          Frontend Developer | Freelancer
         </h2>
 
+
+        {/* Description */}
         <p>
           I create beautiful, responsive websites, develop web
           applications, and produce technology content that helps
           people learn and businesses grow online.
         </p>
 
-        {/* BUTTONS */}
+
+        {/* Buttons */}
         <div className="hero-buttons">
 
           <a
@@ -58,6 +80,7 @@ export default function Hero() {
         {/* =========================================
             SOCIAL MEDIA ICONS
         ========================================= */}
+
         <div className="social-icons">
 
           <a
@@ -69,6 +92,7 @@ export default function Hero() {
             <FaLinkedinIn />
           </a>
 
+
           <a
             href="https://github.com/TolaniAde"
             target="_blank"
@@ -78,6 +102,7 @@ export default function Hero() {
             <FaGithub />
           </a>
 
+
           <a
             href="https://x.com/iamtolani_a?s=11"
             target="_blank"
@@ -86,6 +111,7 @@ export default function Hero() {
           >
             <FaXTwitter />
           </a>
+
 
           <a
             href="https://www.facebook.com/"
@@ -102,12 +128,25 @@ export default function Hero() {
 
 
       {/* =========================================
-          RIGHT SIDE — CIRCULAR PROFILE IMAGE
+          RIGHT SIDE — HERO IMAGE
       ========================================= */}
+
       <div className="hero-image">
 
-        {/* Glow behind the circle */}
+        {/* Outer glow */}
         <div className="hero-image-glow"></div>
+
+
+        {/* Decorative rings */}
+        <div className="image-ring ring-one"></div>
+        <div className="image-ring ring-two"></div>
+        <div className="image-ring ring-three"></div>
+
+
+        {/* Small decorative dots */}
+        <span className="image-dot image-dot-one"></span>
+        <span className="image-dot image-dot-two"></span>
+
 
         {/* Circular image */}
         <div className="image-box">
