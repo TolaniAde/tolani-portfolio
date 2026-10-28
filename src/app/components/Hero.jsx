@@ -1,3 +1,4 @@
+
 import "../styles/hero.css";
 import Image from "next/image";
 
@@ -6,83 +7,62 @@ import {
   FaGithub,
   FaXTwitter,
   FaFacebookF,
+  FaBriefcase,
+  FaArrowUpRightFromSquare,
 } from "react-icons/fa6";
 
 export default function Hero() {
   return (
-    <section className="hero">
+    <section className="hero" id="home">
+      {/* Background decorations */}
+      <div
+        className="hero-bg-circle hero-bg-circle-1"
+        aria-hidden="true"
+      />
+      <div
+        className="hero-bg-circle hero-bg-circle-2"
+        aria-hidden="true"
+      />
 
-      {/* =========================================
-          HERO BACKGROUND DECORATIONS
-      ========================================= */}
-
-      <div className="hero-bg-circle hero-bg-circle-1"></div>
-      <div className="hero-bg-circle hero-bg-circle-2"></div>
-      <div className="hero-bg-dot hero-bg-dot-1"></div>
-      <div className="hero-bg-dot hero-bg-dot-2"></div>
-
-
-      {/* =========================================
-          LEFT SIDE — HERO TEXT
-      ========================================= */}
-
+      {/* Hero text */}
       <div className="hero-text">
-
-        {/* Welcome badge */}
         <span className="hero-tag">
-          👋 Welcome to my Portfolio
+          <span aria-hidden="true">👋</span>
+          Welcome to my Portfolio
         </span>
 
-
-        {/* Main heading */}
         <h1>
-          Hi, I'm{" "}
-          <span className="hero-name">
-            Tolani Adepitan
-          </span>
+          Hi, I&apos;m
+          <span className="hero-name">Tolani Adepitan</span>
         </h1>
 
-
-        {/* Job title */}
         <h2 className="hero-title">
-          Frontend Developer | Freelancer
+          Web Developer{" "}
+          <span className="title-divider">|</span>{" "}
+          Freelancer
         </h2>
 
-
-        {/* Description */}
         <p>
-          I create beautiful, responsive websites, develop web
+          I build beautiful, responsive web
           applications, and produce technology content that helps
           people learn and businesses grow online.
         </p>
 
-
-        {/* Buttons */}
+        {/* Action buttons */}
         <div className="hero-buttons">
-
-          <a
-            href="#contact"
-            className="primary-btn"
-          >
-            Hire Me
+          <a href="#contact" className="primary-btn">
+            <FaBriefcase aria-hidden="true" />
+            <span>Hire Me</span>
           </a>
 
-          <a
-            href="#projects"
-            className="secondary-btn"
-          >
-            View Projects
+          <a href="#projects" className="secondary-btn">
+            <span>View Projects</span>
+            <FaArrowUpRightFromSquare aria-hidden="true" />
           </a>
-
         </div>
 
-
-        {/* =========================================
-            SOCIAL MEDIA ICONS
-        ========================================= */}
-
+        {/* Social links */}
         <div className="social-icons">
-
           <a
             href="https://www.linkedin.com/in/tolani-adepitan"
             target="_blank"
@@ -91,7 +71,6 @@ export default function Hero() {
           >
             <FaLinkedinIn />
           </a>
-
 
           <a
             href="https://github.com/TolaniAde"
@@ -102,7 +81,6 @@ export default function Hero() {
             <FaGithub />
           </a>
 
-
           <a
             href="https://x.com/iamtolani_a?s=11"
             target="_blank"
@@ -112,7 +90,6 @@ export default function Hero() {
             <FaXTwitter />
           </a>
 
-
           <a
             href="https://www.facebook.com/"
             target="_blank"
@@ -121,49 +98,29 @@ export default function Hero() {
           >
             <FaFacebookF />
           </a>
-
         </div>
-
       </div>
 
-
-      {/* =========================================
-          RIGHT SIDE — HERO IMAGE
-      ========================================= */}
-
+      {/* Portrait and decorative effects */}
       <div className="hero-image">
+        <div className="hero-image-glow" aria-hidden="true" />
 
-        {/* Outer glow */}
-        <div className="hero-image-glow"></div>
+        <div className="image-ring ring-one" aria-hidden="true" />
+        <div className="image-ring ring-two" aria-hidden="true" />
+        <div className="image-ring ring-three" aria-hidden="true" />
 
-
-        {/* Decorative rings */}
-        <div className="image-ring ring-one"></div>
-        <div className="image-ring ring-two"></div>
-        <div className="image-ring ring-three"></div>
-
-
-        {/* Small decorative dots */}
-        <span className="image-dot image-dot-one"></span>
-        <span className="image-dot image-dot-two"></span>
-
-
-        {/* Circular image */}
         <div className="image-box">
-
           <Image
             src="/images/AdepitanTolani.png"
             alt="Tolani Adepitan"
             width={600}
             height={600}
             priority
+            sizes="(max-width: 480px) 64vw, (max-width: 900px) 40vw, 320px"
             className="hero-person"
           />
-
         </div>
-
       </div>
-
     </section>
   );
 }

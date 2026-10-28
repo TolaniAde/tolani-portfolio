@@ -10,7 +10,7 @@ import {
 const services = [
   {
     icon: FaLaptopCode,
-    title: "Frontend Development",
+    title: "Web Development",
     description:
       "Building fast, responsive, and modern websites using React, Next.js, and JavaScript.",
   },
@@ -18,7 +18,7 @@ const services = [
     icon: FaPenNib,
     title: "Technical Writing",
     description:
-      "Creating SEO-friendly tutorials, documentation, and technology articles.",
+      "Creating SEO-friendly tutorials, documentation, and articles.",
   },
   {
     icon: FaWordpress,

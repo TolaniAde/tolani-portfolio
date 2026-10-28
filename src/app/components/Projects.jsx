@@ -10,8 +10,8 @@ const projects = [
     category: "Web Development",
     title: "Personal Portfolio",
     description:
-      "A modern, responsive portfolio showcasing my skills, services, projects, and experience as a frontend developer.",
-    image: "/projects/portfolio.png",
+      "A responsive portfolio showcasing my skills, services, and work as a web developer.",
+    image: "/images/portfolio.png",
     imageAlt: "Screenshot of my personal portfolio website",
     technologies: ["Next.js", "React", "CSS"],
     liveUrl: "https://tolani-portfolio-seven.vercel.app/",
@@ -22,7 +22,7 @@ const projects = [
     category: "Web Application",
     title: "Task Marketplace",
     description:
-      "A platform concept designed to connect people who need tasks completed with individuals who can provide those services.",
+      "A platform concept connecting people who need tasks completed with individuals offering those services.",
     image: "/projects/task-marketplace.png",
     imageAlt: "Screenshot of the task marketplace project",
     technologies: ["React", "JavaScript", "CSS"],
@@ -34,7 +34,7 @@ const projects = [
     category: "Publishing Platform",
     title: "Research Publishing Platform",
     description:
-      "A digital platform concept for presenting academic journals, sharing research information, and helping authors discover publication opportunities.",
+      "A digital platform concept for showcasing academic journals and helping authors discover publishing opportunities.",
     image: "/projects/publishing-platform.png",
     imageAlt: "Screenshot of the research publishing platform",
     technologies: ["React", "JavaScript", "Responsive Design"],
@@ -43,41 +43,39 @@ const projects = [
   },
 ];
 
+const allProjectsUrl =
+  "https://github.com/TolaniAde?tab=repositories";
+
 export default function Projects() {
   return (
     <section className="projects-section" id="projects">
       <div className="projects-container">
         <header className="projects-heading">
-          <span className="projects-eyebrow">
-            MY PORTFOLIO
-          </span>
+          <span className="projects-eyebrow">MY WORK</span>
 
           <h2>
             Projects I've <span>Built</span>
           </h2>
 
           <p>
-            A selection of projects showcasing my skills,
-            creativity, and passion for building useful
-            digital experiences.
+            A few things I've created with code, creativity,
+            and a focus on solving real problems.
           </p>
         </header>
 
         <div className="projects-grid">
-          {projects.map((project) => (
+          {projects.map((project, index) => (
             <article
               className="project-card"
               key={project.number}
+              style={{ "--project-index": index }}
             >
-              {/* PROJECT SCREENSHOT */}
               <div className="project-preview">
                 <Image
                   src={project.image}
                   alt={project.imageAlt}
                   fill
-                  sizes="(max-width: 640px) 90vw,
-                         (max-width: 1050px) 45vw,
-                         30vw"
+                  sizes="(max-width: 640px) 90vw, (max-width: 1050px) 45vw, 30vw"
                   className="project-screenshot"
                 />
 
@@ -88,24 +86,33 @@ export default function Projects() {
                 <span className="project-category">
                   {project.category}
                 </span>
+
+                <div className="project-image-overlay" />
               </div>
 
-              {/* PROJECT INFORMATION */}
               <div className="project-card-content">
-                <h3>{project.title}</h3>
+                <div className="project-title-row">
+                  <h3>{project.title}</h3>
+                  <span className="project-title-arrow" aria-hidden="true">
+                    ↗
+                  </span>
+                </div>
 
-                <p>{project.description}</p>
+                <p className="project-description">
+                  {project.description}
+                </p>
 
-                <div className="project-technologies">
+                <div
+                  className="project-technologies"
+                  aria-label="Technologies used"
+                >
                   {project.technologies.map((technology) => (
-                    <span key={technology}>
-                      {technology}
-                    </span>
+                    <span key={technology}>{technology}</span>
                   ))}
                 </div>
 
                 <div className="project-links">
-                  {project.liveUrl && (
+                  {project.liveUrl ? (
                     <a
                       href={project.liveUrl}
                       target="_blank"
@@ -114,6 +121,10 @@ export default function Projects() {
                     >
                       Live Demo <span aria-hidden="true">↗</span>
                     </a>
+                  ) : (
+                    <span className="project-status">
+                      In progress
+                    </span>
                   )}
 
                   {project.githubUrl && (
@@ -126,26 +137,35 @@ export default function Projects() {
                       GitHub <span aria-hidden="true">↗</span>
                     </a>
                   )}
-
-                  {!project.liveUrl && !project.githubUrl && (
-                    <span className="project-coming-soon">
-                      Project details coming soon
-                    </span>
-                  )}
                 </div>
               </div>
             </article>
           ))}
         </div>
 
-        <div className="projects-footer">
-          <p>Have an idea for a project?</p>
+        <div className="projects-view-all">
+          <p>Want to see more of my work?</p>
 
           <a
-            href="#contact"
-            className="projects-contact-link"
+            href={allProjectsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="projects-view-all-link"
           >
-            Let's work together <span aria-hidden="true">→</span>
+            View All Projects
+            <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+
+        <div className="projects-footer">
+          <div>
+            <h3>Have an idea in mind?</h3>
+            <p>Let's turn it into something useful.</p>
+          </div>
+
+          <a href="#contact" className="projects-contact-link">
+            Let's Work Together
+            <span aria-hidden="true">→</span>
           </a>
         </div>
       </div>
