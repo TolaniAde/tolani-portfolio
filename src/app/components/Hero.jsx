@@ -111,7 +111,7 @@ export default function Hero() {
 
         <div className="image-box">
           <Image
-            src="/images/AdepitanTolani.png"
+            src="/images/Tolani's Portrait.png"
             alt="Tolani Adepitan"
             width={600}
             height={600}
